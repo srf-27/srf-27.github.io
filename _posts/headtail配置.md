@@ -1,8 +1,28 @@
+---
+layout:
+permalink:
+title: headtail配置
+description:
+author:
+date: 2026-05-05+2200
+categories:
+  - 计算机
+  - 组网
+tags:
+  - headtail
+excerpt_separator:
+published:
+toc: true
+comment: true
+pin: false
+math: true
+mermaid: true
+---
 简单用docker配了一下headtail来连云服务器，这里随便塞一些指令吧
 #### 服务端注册节点
 
 #### 使用 PreAuth Key
-```
+```terminal
 # 创建用户
 docker exec headscale headscale users create <USER_NAME>
 
@@ -13,7 +33,7 @@ docker exec headscale headscale users list
 docker exec headscale headscale preauthkeys create --user <USER_ID>
 ```
 #### 客户端加入指令
-```
+```terminal
 tailscale up --login-server <YOUR_HEADSCALE_URL> --authkey <YOUR_AUTH_KEY>
 ```
 用自己的电脑和虚拟机测试，都可以连上云服务器，打出的直连隧道也可以用来局域网连接，mc原版联机速度倒是够用，不知道上限是多少。
